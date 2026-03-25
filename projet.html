@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projets de Yasmina DUFLO — Design graphique, développement web, identités visuelles.">
+  <title>Projets — Yasmina DUFLO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 8rem 3rem 3rem; max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 3rem; flex-wrap: wrap; border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300; line-height: 0.95; color: var(--ink);
+    }
+    .page-hero h1 em { font-style: italic; color: var(--rose); }
+    .page-hero p { font-size: 0.85rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 38ch; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 7rem 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header>
+    <a href="index.html" class="logo" aria-label="Yasmina DUFLO — Accueil">Y. Duflo</a>
+    <button class="btn-burger" id="burger" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">☰</button>
+    <nav id="main-nav" aria-label="Navigation principale">
+      <button class="btn-fermer-menu" id="fermer-menu" aria-label="Fermer le menu">✕</button>
+      <a href="index.html">Accueil</a>
+      <a href="projet.html" class="actif" aria-current="page">Projets</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay"></div>
+  </header>
+
+  <main id="contenu">
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li aria-current="page">Projets</li>
+      </ol>
+    </nav>
+
+    <div class="page-hero">
+      <h1>Mes<br><em>réalisations</em></h1>
+      <p>Design graphique, développement web, identités visuelles — du concept à la mise en œuvre.</p>
+    </div>
+
+    <div class="filtres-wrap" role="group" aria-label="Filtrer les projets par catégorie">
+      <button class="filtre-btn actif" data-filtre="tous">Tous</button>
+      <button class="filtre-btn" data-filtre="design">Design</button>
+      <button class="filtre-btn" data-filtre="web">Web</button>
+      <button class="filtre-btn" data-filtre="branding">Branding</button>
+    </div>
+
+    <section class="section-projets" aria-labelledby="titre-projets">
+      <div style="max-width:1200px; margin:0 auto;">
+        <div class="section-label" aria-hidden="true">Portfolio</div>
+        <h2 id="titre-projets" class="section-title">Tous les <em>projets</em></h2>
+      </div>
+      <!-- Chargé dynamiquement via projets.json -->
+      <div class="projets-grid" id="grille-projets" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="annee"></span> Yasmina DUFLO — BUT MMI · Université des Antilles</p>
+    <p>Design & Développement web</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

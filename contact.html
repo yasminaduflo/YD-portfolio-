@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contacter Yasmina DUFLO — Designer graphique & Développeuse web en Guadeloupe.">
+  <title>Contact — Yasmina DUFLO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-hero { padding: 8rem 3rem 3rem; max-width: 1200px; margin: 0 auto; }
+    .contact-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 300; line-height: 0.95; color: var(--ink);
+    }
+    .contact-hero h1 em { font-style: italic; color: var(--rose); }
+    @media (max-width: 768px) { .contact-hero { padding: 7rem 1.5rem 2rem; } }
+  </style>
+</head>
+<body>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header>
+    <a href="index.html" class="logo" aria-label="Yasmina DUFLO — Accueil">Y. Duflo</a>
+    <button class="btn-burger" id="burger" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">☰</button>
+    <nav id="main-nav" aria-label="Navigation principale">
+      <button class="btn-fermer-menu" id="fermer-menu" aria-label="Fermer le menu">✕</button>
+      <a href="index.html">Accueil</a>
+      <a href="projet.html">Projets</a>
+      <a href="contact.html" class="actif" aria-current="page">Contact</a>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay"></div>
+  </header>
+
+  <main id="contenu">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </nav>
+
+    <div class="contact-hero reveal">
+      <div class="section-label" aria-hidden="true">Contact</div>
+      <h1>Travaillons<br><em>ensemble.</em></h1>
+    </div>
+
+    <div class="contact-layout">
+      <aside class="contact-text reveal">
+        <div class="section-label" aria-hidden="true">Coordonnées</div>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.5rem);">Disponible pour<br><em>de nouveaux projets</em></h2>
+        <p>Collaboration, stage, projet créatif — n'hésite pas à me contacter. Je réponds sous 48h.</p>
+        <div class="contact-links" role="list" aria-label="Moyens de contact">
+          <a href="mailto:yasminaduflo97125@gmail.com" class="contact-link" role="listitem">
+            yasminaduflo97125@gmail.com <span>Email →</span>
+          </a>
+          <a href="https://www.linkedin.com/in/yasmina-duflo-9bb528389/" target="_blank" rel="me noopener" class="contact-link" role="listitem">
+            LinkedIn <span>Réseau →</span>
+          </a>
+          <a href="#" class="contact-link" role="listitem" aria-label="Localisation : Guadeloupe, Antilles françaises">
+            Guadeloupe, Antilles <span>Localisation</span>
+          </a>
+        </div>
+        <p class="dispo">
+          <span class="dispo-dot" aria-hidden="true"></span>
+          Disponible pour de nouveaux projets
+        </p>
+      </aside>
+
+      <div class="reveal reveal-d1">
+        <form id="form-contact" class="contact-form"
+          action="https://formspree.io/f/mjknrkll" method="post"
+          novalidate aria-label="Formulaire de contact">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom"
+                required aria-required="true" aria-describedby="nom-error">
+              <p id="nom-error" class="error-msg" role="alert" aria-live="polite"></p>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com"
+                required aria-required="true" aria-describedby="email-error">
+              <p id="email-error" class="error-msg" role="alert" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sujet">Sujet</label>
+            <input type="text" id="sujet" name="sujet" placeholder="Collaboration, stage, projet...">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="6" maxlength="500"
+              placeholder="Décris ton projet ou ta demande..."
+              required aria-required="true"
+              aria-describedby="message-error message-count"></textarea>
+            <p id="message-error" class="error-msg" role="alert" aria-live="polite"></p>
+            <p id="message-count" class="char-count" aria-live="polite">
+              <span id="restant">500</span> caractères restants
+            </p>
+          </div>
+          <div class="form-footer">
+            <p class="form-note">* Champs obligatoires</p>
+            <button type="submit" class="btn-submit">Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="annee"></span> Yasmina DUFLO — BUT MMI · Université des Antilles</p>
+    <p>Design & Développement web</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

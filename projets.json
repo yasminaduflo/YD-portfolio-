@@ -1,0 +1,114 @@
+[
+  {
+    "titre": "MARËIS",
+    "tag": "web",
+    "large": true,
+    "img": "Images/Mareis.jpeg",
+    "alt": "Page d'accueil du site MARËIS",
+    "categorie": "Web · HTML / CSS",
+    "desc": "Site associatif bilingue pour la protection marine en Guadeloupe, réalisé en équipe dans le cadre d'une SAÉ BUT MMI. Thème sombre/clair, design responsive, navigation accessible.",
+    "lien": "https://sallyanicet-gif.github.io/sae-1.05/index.html",
+    "download": null
+  },
+  {
+    "titre": "Charte Graphique",
+    "tag": "design",
+    "img": "Images/Charte graphique  page 1.png",
+    "alt": "Charte graphique — couverture",
+    "categorie": "Design · Canva",
+    "desc": "Création d'une identité visuelle complète pour une startup fictive — typographie, palette de couleurs, logo et ses déclinaisons, règles d'usage.",
+    "lien": null,
+    "download": "https://drive.google.com/file/d/1xMpSnZLUf0g6MUJd02kAfNarXr-osQH9/view?usp=drive_link"
+  },
+  {
+    "titre": "OANA",
+    "tag": "branding",
+    "img": "Images/Oana.png",
+    "alt": "Logo et identité visuelle OANA",
+    "categorie": "Branding · Canva",
+    "desc": "Identité visuelle complète pour une marque de produits ménagers naturels. Logo mandala, palette bleu-jaune-vert, déclinaison sur packagings.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Affiche Artificia",
+    "tag": "design",
+    "img": "Images/Artificia.png",
+    "alt": "Affiche Artificia — Journée de la Science",
+    "categorie": "Design · Canva",
+    "desc": "Affiche promotionnelle pour l'atelier Artificia présenté lors de la Journée de la Science au BUT MMI de l'Université des Antilles.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Logo Frida",
+    "tag": "design",
+    "img": "Images/FRIDA couleur 2.png",
+    "alt": "Logo Frida Kahlo coloré",
+    "categorie": "Design · Canva",
+    "desc": "Identité visuelle inspirée de la peintre Frida Kahlo — typographie expressive, couleurs vibrantes, formes organiques caractéristiques de son univers artistique.",
+    "lien": null,
+    "download": null
+  },
+  {
+  "titre": "L'Oasis des Héros",
+  "tag": "design",
+  "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
+  "img": "Images/Affiche.png",
+  "alt": "Affiche L'Oasis des Héros",
+  "categorie": "Design · Canva",
+  "desc": "Affiche événementielle pour la journée portes ouvertes du BUT MMI. Concept superhéros, ambiance colorée et dynamique.",
+  "lien": null,
+  "download": null
+  },
+  {
+    "titre": "Mojito Fraise",
+    "tag": "design",
+    "img": "Images/Mojito fraise.png",
+    "alt": "Affiche publicitaire Mojito Fraise",
+    "categorie": "Design · Canva",
+    "desc": "Affiche publicitaire pour un cocktail Mojito Fraise — composition estivale, typographie fraîche, palette rouge et verte.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Affiche BUT MMI",
+    "tag": "design",
+    "img": "Images/But MMI.png",
+    "alt": "Affiche promotionnelle BUT MMI",
+    "categorie": "Design · Canva",
+    "desc": "Affiche promotionnelle pour le BUT MMI de l'Université des Antilles. Mise en avant de la formation et de ses débouchés.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Ciao Kombucha",
+    "tag": "design",
+    "img": "Images/Ciao.png",
+    "alt": "Affiche Ciao Kombucha Gingembre Hibiscus",
+    "categorie": "Design · Canva",
+    "desc": "Affiche publicitaire pour une boisson Kombucha Gingembre Hibiscus. Design frais et naturel, palette colorée inspirée des ingrédients.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Logo Yasmina",
+    "tag": "design",
+    "img": "Images/Prénom.png",
+    "alt": "Logo typographique Yasmina",
+    "categorie": "Design · Canva",
+    "desc": "Logo personnel avec typographie créative sur fond dégradé chaud — violet, pêche, jaune. Forme organique en blob, lettrage stylisé en tons terre cuite.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Merry Christmas",
+    "tag": "design",
+    "img": "Images/Merry chrismas.png",
+    "alt": "Carte de vœux Merry Christmas",
+    "categorie": "Design · Canva",
+    "desc": "Carte de vœux festive pour Noël — sapin, père Noël, cadeaux et typographie calligraphique dorée sur fond vert profond.",
+    "lien": null,
+    "download": null
+  }
+]
