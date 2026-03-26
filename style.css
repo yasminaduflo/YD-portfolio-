@@ -171,7 +171,7 @@ section { padding: 7rem 3rem; }
 
 .hero-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 5vw, 5rem);
   font-weight: 300; line-height: 0.95; color: var(--ink); margin-bottom: 2.5rem;
 }
 .hero-name em { font-style: italic; color: var(--rose); }
