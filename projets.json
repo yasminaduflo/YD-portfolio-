@@ -5,13 +5,13 @@
     "large": true,
     "img": "Images/Mareis.jpeg",
     "alt": "Page d'accueil du site MARËIS",
-    "categorie": "Web · HTML / CSS",
+    "categorie": "Web · HTML / CSS · Vs Code",
     "desc": "Site associatif bilingue pour la protection marine en Guadeloupe, réalisé en équipe dans le cadre d'une SAÉ BUT MMI. Thème sombre/clair, design responsive, navigation accessible.",
     "lien": "https://sallyanicet-gif.github.io/sae-1.05/index.html",
     "download": null
   },
   {
-    "titre": "Charte Graphique",
+    "titre": "LIPS",
     "tag": "design",
     "img": "Images/Charte graphique  page 1.png",
     "alt": "Charte graphique — couverture",
@@ -23,10 +23,41 @@
   {
     "titre": "OANA",
     "tag": "branding",
-    "img": "Images/Oana.png",
-    "alt": "Logo et identité visuelle OANA",
-    "categorie": "Branding · Canva",
-    "desc": "Identité visuelle complète pour une marque de produits ménagers naturels. Logo mandala, palette bleu-jaune-vert, déclinaison sur packagings.",
+    "img": "Images/OANA.png",
+    "alt": "Logo et packaging OANA — savons artisanaux",
+    "categorie": "Branding · Identité visuelle · Canva",
+    "desc": "Conception de l'identité visuelle de OANA, une marque de savons artisanaux caribéens, réalisée dans le cadre d'un projet client. Logo aquarelle aux tons verts et dorés décliné sur le packaging produit, alliant authenticité naturelle et ancrage caribéen.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Terre de Blues",
+    "tag": "branding",
+    "imgs": ["Images/2.jpg", "Images/1.jpg"],
+    "img": "Images/2.jpg",
+    "alt": "Affiche festival Terre de Blues — Marie-Galante",
+    "categorie": "Direction artistique · Festival · Canva",
+    "desc": "Conception des visuels pour la 23ème édition du Festival Terre de Blues de Marie-Galante, réalisée en équipe. Affiches artistes (The Wailers), supports de communication et identité événementielle aux couleurs soleil et terres créoles.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Yasmina.D — Logo",
+    "tag": "design",
+    "img": "Images/logo_moi.png",
+    "alt": "Logo personnel Yasmina.D — typographie entrelacée",
+    "categorie": "Design · Personal branding",
+    "desc": "Création de mon logo personnel. Logotype typographique avec lettres entrelacées en dégradé rose-doré sur fond noir — esthétique éditoriale et luxueuse.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Logo Personnelle",
+    "tag": "design",
+    "img": "Images/Prénom.png",
+    "alt": "Logo typographique Yasmina",
+    "categorie": "Design · Canva",
+    "desc": "Logo personnel avec typographie créative sur fond dégradé chaud — violet, pêche, jaune. Forme organique en blob, lettrage stylisé en tons terre cuite.",
     "lien": null,
     "download": null
   },
@@ -51,15 +82,15 @@
     "download": null
   },
   {
-  "titre": "L'Oasis des Héros",
-  "tag": "design",
-  "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
-  "img": "Images/Affiche.png",
-  "alt": "Affiche L'Oasis des Héros",
-  "categorie": "Design · Canva",
-  "desc": "Affiche événementielle pour la journée portes ouvertes du BUT MMI. Concept superhéros, ambiance colorée et dynamique.",
-  "lien": null,
-  "download": null
+    "titre": "L'Oasis des Héros",
+    "tag": "design",
+    "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
+    "img": "Images/Affiche.png",
+    "alt": "Affiche L'Oasis des Héros",
+    "categorie": "Design · Canva",
+    "desc": "Affiche événementielle pour la journée portes ouvertes du BUT MMI. Concept superhéros, ambiance colorée et dynamique.",
+    "lien": null,
+    "download": null
   },
   {
     "titre": "Mojito Fraise",
@@ -92,16 +123,6 @@
     "download": null
   },
   {
-    "titre": "Logo Yasmina",
-    "tag": "design",
-    "img": "Images/Prénom.png",
-    "alt": "Logo typographique Yasmina",
-    "categorie": "Design · Canva",
-    "desc": "Logo personnel avec typographie créative sur fond dégradé chaud — violet, pêche, jaune. Forme organique en blob, lettrage stylisé en tons terre cuite.",
-    "lien": null,
-    "download": null
-  },
-  {
     "titre": "Merry Christmas",
     "tag": "design",
     "img": "Images/Merry chrismas.png",
@@ -109,6 +130,37 @@
     "categorie": "Design · Canva",
     "desc": "Carte de vœux festive pour Noël — sapin, père Noël, cadeaux et typographie calligraphique dorée sur fond vert profond.",
     "lien": null,
-    "download": null
-  }
+    "download": null 
+ }
+ ,{
+  "titre": "Affiche Mel Ramos",
+  "tag": "design",
+  "img": "Images/mel_ramos.jpg",
+  "alt": "Affiche d'exposition Mel Ramos — musée d'art contemporain",
+  "categorie": "Design · Affiche · Photoshop",
+  "desc": "Création d'une affiche d'exposition pour l'artiste pop art Mel Ramos, dans le cadre d'un exercice de cours sur le mouvement Pop Art. Composition typographique et visuelle pour le musée d'art contemporain [mac] de Marseille.",
+  "lien": null,
+  "download": null
+}
+,{
+  "titre": "ClearVita",
+  "tag": "branding",
+  "large": true,
+  "img": "Images/clearvita.png",
+  "alt": "ClearVita — lentilles de contact éco-responsables",
+  "categorie": "Branding · Communication · Canva",
+  "desc": "Création réaliser par mes soins au complète d'une marque fictive de lentilles de contact éco-responsables, en anglais. Identité visuelle, gamme de produits naturels, persona, campagne publicitaire et mockups réseaux sociaux — du concept à la présentation finale.",
+  "lien": null,
+  "download": "https://drive.google.com/file/d/1V4iV2OPR7JgvjdQmH6ZXvf6e7D4EO8FH/view?usp=drive_link"
+}
+,{
+  "titre": "Affiche Avatar",
+  "tag": "design",
+  "img": "Images/avatar.jpg",
+  "alt": "Affiche minimaliste Avatar — style Saul Bass",
+  "categorie": "Design · Affiche · Photoshop",
+  "desc": "Affiche minimaliste pour le film Avatar de James Cameron, réalisée dans le cadre d'un exercice inspiré du style de Saul Bass. Composition épurée autour de l'arbre sacré Eywa, palette cyan et bleu électrique.",
+  "lien": null,
+  "download": null
+}
 ]
