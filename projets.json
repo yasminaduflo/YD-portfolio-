@@ -11,6 +11,17 @@
     "download": null
   },
   {
+    "titre": "Nexovia",
+    "tag": "web",
+    "large": true,
+    "img": "Images/nexovia.png",
+    "alt": "Page d'accueil du site Nexovia",
+    "categorie": "Web · HTML / CSS · VS Code",
+    "desc": "Site d'actualités fictif réalisé dans le cadre d'un exercice BUT MMI. Plusieurs rubriques, navigation multi-pages, design éditorial responsive déployé sur GitHub Pages.",
+    "lien": "https://yasminaduflo97125-crypto.github.io/nexovia/Nexovia_index.html",
+    "download": null
+  },
+  {
     "titre": "LIPS",
     "tag": "design",
     "img": "Images/Charte graphique  page 1.png",
@@ -130,37 +141,67 @@
     "categorie": "Design · Canva",
     "desc": "Carte de vœux festive pour Noël — sapin, père Noël, cadeaux et typographie calligraphique dorée sur fond vert profond.",
     "lien": null,
-    "download": null 
- }
- ,{
-  "titre": "Affiche Mel Ramos",
-  "tag": "design",
-  "img": "Images/mel_ramos.jpg",
-  "alt": "Affiche d'exposition Mel Ramos — musée d'art contemporain",
-  "categorie": "Design · Affiche · Photoshop",
-  "desc": "Création d'une affiche d'exposition pour l'artiste pop art Mel Ramos, dans le cadre d'un exercice de cours sur le mouvement Pop Art. Composition typographique et visuelle pour le musée d'art contemporain [mac] de Marseille.",
-  "lien": null,
-  "download": null
-}
-,{
-  "titre": "ClearVita",
-  "tag": "branding",
-  "large": true,
-  "img": "Images/Clearvita.png",
-  "alt": "ClearVita — lentilles de contact éco-responsables",
-  "categorie": "Branding · Communication · Canva",
-  "desc": "Création réaliser par mes soins au complète d'une marque fictive de lentilles de contact éco-responsables, en anglais. Identité visuelle, gamme de produits naturels, persona, campagne publicitaire et mockups réseaux sociaux — du concept à la présentation finale.",
-  "lien": null,
-  "download": "https://drive.google.com/file/d/1V4iV2OPR7JgvjdQmH6ZXvf6e7D4EO8FH/view?usp=drive_link"
-}
-,{
-  "titre": "Affiche Avatar",
-  "tag": "design",
-  "img": "Images/avatar.jpg",
-  "alt": "Affiche minimaliste Avatar — style Saul Bass",
-  "categorie": "Design · Affiche · Photoshop",
-  "desc": "Affiche minimaliste pour le film Avatar de James Cameron, réalisée dans le cadre d'un exercice inspiré du style de Saul Bass. Composition épurée autour de l'arbre sacré Eywa, palette cyan et bleu électrique.",
-  "lien": null,
-  "download": null
-}
+    "download": null
+  },
+  {
+    "titre": "Affiche Mel Ramos",
+    "tag": "design",
+    "img": "Images/mel_ramos.jpg",
+    "alt": "Affiche d'exposition Mel Ramos — musée d'art contemporain",
+    "categorie": "Design · Affiche · Photoshop",
+    "desc": "Création d'une affiche d'exposition pour l'artiste pop art Mel Ramos, dans le cadre d'un exercice de cours sur le mouvement Pop Art. Composition typographique et visuelle pour le musée d'art contemporain [mac] de Marseille.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "ClearVita",
+    "tag": "branding",
+    "large": true,
+    "img": "Images/Clearvita.png",
+    "alt": "ClearVita — lentilles de contact éco-responsables",
+    "categorie": "Branding · Communication · Canva",
+    "desc": "Création réaliser par mes soins au complète d'une marque fictive de lentilles de contact éco-responsables, en anglais. Identité visuelle, gamme de produits naturels, persona, campagne publicitaire et mockups réseaux sociaux — du concept à la présentation finale.",
+    "lien": null,
+    "download": "https://drive.google.com/file/d/1V4iV2OPR7JgvjdQmH6ZXvf6e7D4EO8FH/view?usp=drive_link"
+  },
+  {
+    "titre": "Affiche Avatar",
+    "tag": "design",
+    "img": "Images/avatar.jpg",
+    "alt": "Affiche minimaliste Avatar — style Saul Bass",
+    "categorie": "Design · Affiche · Photoshop",
+    "desc": "Affiche minimaliste pour le film Avatar de James Cameron, réalisée dans le cadre d'un exercice inspiré du style de Saul Bass. Composition épurée autour de l'arbre sacré Eywa, palette cyan et bleu électrique.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "Tasty Crousty",
+    "tag": "design",
+    "img": "Images/tasty_crousty.png",
+    "alt": "Affiche Tasty Crousty — Les Délices d'Iza",
+    "categorie": "Design · Affiche · Canva",
+    "desc": "Création d'une affiche publicitaire pour le plat signature du traiteur artisanal Les Délices d'Iza — le Tasty Crousty, un plat riz/poulet/oignons frits à 10€ avec Coca. Composition dynamique sur fond rouge-orangé.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "SUNRÉA",
+    "tag": "design",
+    "img": "Images/affiche_event_fictif.png",
+    "alt": "Affiche événement fictif SUNRÉA — Plage de Leroux, Deshaies",
+    "categorie": "Design · Affiche événementielle · Canva",
+    "desc": "Affiche pour un événement caribéen fictif — soirée Gwo Ka, contes, DJ set afro-caribéen et food à la Plage de Leroux, Deshaies. Esthétique tropicale et festive, palette coucher de soleil.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "BLACKPINK",
+    "tag": "design",
+    "img": "Images/Black_Pink.png",
+    "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
+    "categorie": "Design · Visuel fan-made · Canva",
+    "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
+    "lien": null,
+    "download": null
+  }
 ]
