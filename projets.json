@@ -184,6 +184,16 @@
     "download": null
   },
    {
+    "titre": "BLACKPINK",
+    "tag": "design",
+    "img": "Images/Black_Pink.png",
+    "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
+    "categorie": "Design · Visuel fan-made · Canva",
+    "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
+    "lien": null,
+    "download": null
+  },
+   {
     "titre": "Nexovia",
     "tag": "web",
     "large": true,
@@ -194,14 +204,4 @@
     "lien": "https://yasminaduflo97125-crypto.github.io/nexovia/Nexovia_index.html",
     "download": null
   },
-  {
-    "titre": "BLACKPINK",
-    "tag": "design",
-    "img": "Images/Black_Pink.png",
-    "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
-    "categorie": "Design · Visuel fan-made · Canva",
-    "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
-    "lien": null,
-    "download": null
-  }
 ]
