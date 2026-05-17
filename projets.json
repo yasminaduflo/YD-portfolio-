@@ -11,17 +11,6 @@
     "download": null
   },
   {
-    "titre": "Nexovia",
-    "tag": "web",
-    "large": true,
-    "img": "Images/nexovia.png",
-    "alt": "Page d'accueil du site Nexovia",
-    "categorie": "Web · HTML / CSS · VS Code",
-    "desc": "Site d'actualités fictif réalisé dans le cadre d'un exercice BUT MMI. Plusieurs rubriques, navigation multi-pages, design éditorial responsive déployé sur GitHub Pages.",
-    "lien": "https://yasminaduflo97125-crypto.github.io/nexovia/Nexovia_index.html",
-    "download": null
-  },
-  {
     "titre": "LIPS",
     "tag": "design",
     "img": "Images/Charte graphique  page 1.png",
@@ -192,6 +181,17 @@
     "categorie": "Design · Affiche événementielle · Canva",
     "desc": "Affiche pour un événement caribéen fictif — soirée Gwo Ka, contes, DJ set afro-caribéen et food à la Plage de Leroux, Deshaies. Esthétique tropicale et festive, palette coucher de soleil.",
     "lien": null,
+    "download": null
+  },
+   {
+    "titre": "Nexovia",
+    "tag": "web",
+    "large": true,
+    "img": "Images/nexovia.png",
+    "alt": "Page d'accueil du site Nexovia",
+    "categorie": "Web · HTML / CSS · VS Code",
+    "desc": "Site d'actualités fictif réalisé dans le cadre d'un exercice BUT MMI. Plusieurs rubriques, navigation multi-pages, design éditorial responsive déployé sur GitHub Pages.",
+    "lien": "https://yasminaduflo97125-crypto.github.io/nexovia/Nexovia_index.html",
     "download": null
   },
   {
