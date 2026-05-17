@@ -187,7 +187,7 @@
     "titre": "Nexovia",
     "tag": "web",
     "large": true,
-    "img": "Images/nexovia.png",
+    "img": "Images/noxovia.png",
     "alt": "Page d'accueil du site Nexovia",
     "categorie": "Web · HTML / CSS · VS Code",
     "desc": "Site d'actualités fictif réalisé dans le cadre d'un exercice BUT MMI. Plusieurs rubriques, navigation multi-pages, design éditorial responsive déployé sur GitHub Pages.",
