@@ -10,6 +10,36 @@
     "lien": "https://sallyanicet-gif.github.io/sae-1.05/index.html",
     "download": null
   },
+    {
+    "titre": "Affiche Avatar",
+    "tag": "design",
+    "img": "Images/avatar.jpg",
+    "alt": "Affiche minimaliste Avatar — style Saul Bass",
+    "categorie": "Design · Affiche · Photoshop",
+    "desc": "Affiche minimaliste pour le film Avatar de James Cameron, réalisée dans le cadre d'un exercice inspiré du style de Saul Bass. Composition épurée autour de l'arbre sacré Eywa, palette cyan et bleu électrique.",
+    "lien": null,
+    "download": null
+  },
+  {
+    "titre": "BLACKPINK",
+    "tag": "design",
+    "img": "Images/Black_Pink.png",
+    "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
+    "categorie": "Design · Visuel fan-made · Canva",
+    "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
+    "lien": null,
+    "download": null
+  },
+   {
+    "titre": "Yasmina.D — Logo",
+    "tag": "design",
+    "img": "Images/logo_moi.png",
+    "alt": "Logo personnel Yasmina.D — typographie entrelacée",
+    "categorie": "Design · Personal branding",
+    "desc": "Création de mon logo personnel. Logotype typographique avec lettres entrelacées en dégradé rose-doré sur fond noir — esthétique éditoriale et luxueuse.",
+    "lien": null,
+    "download": null
+  },
   {
     "titre": "LIPS",
     "tag": "design",
@@ -20,34 +50,23 @@
     "lien": null,
     "download": "https://drive.google.com/file/d/1xMpSnZLUf0g6MUJd02kAfNarXr-osQH9/view?usp=drive_link"
   },
-  {
-    "titre": "OANA",
-    "tag": "branding",
-    "img": "Images/OANA.png",
-    "alt": "Logo et packaging OANA — savons artisanaux",
-    "categorie": "Branding · Identité visuelle · Canva",
-    "desc": "Conception de l'identité visuelle de OANA, une marque de savons artisanaux caribéens, réalisée dans le cadre d'un projet client. Logo aquarelle aux tons verts et dorés décliné sur le packaging produit, alliant authenticité naturelle et ancrage caribéen.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Terre de Blues",
-    "tag": "branding",
-    "imgs": ["Images/2.jpg", "Images/1.jpg"],
-    "img": "Images/2.jpg",
-    "alt": "Affiche festival Terre de Blues — Marie-Galante",
-    "categorie": "Direction artistique · Festival · Canva",
-    "desc": "Conception des visuels pour la 23ème édition du Festival Terre de Blues de Marie-Galante, réalisée en équipe. Affiches artistes (The Wailers), supports de communication et identité événementielle aux couleurs soleil et terres créoles.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Yasmina.D — Logo",
+    {
+    "titre": "Logo Frida",
     "tag": "design",
-    "img": "Images/logo_moi.png",
-    "alt": "Logo personnel Yasmina.D — typographie entrelacée",
-    "categorie": "Design · Personal branding",
-    "desc": "Création de mon logo personnel. Logotype typographique avec lettres entrelacées en dégradé rose-doré sur fond noir — esthétique éditoriale et luxueuse.",
+    "img": "Images/FRIDA couleur 2.png",
+    "alt": "Logo Frida Kahlo coloré",
+    "categorie": "Design · Canva",
+    "desc": "Identité visuelle inspirée de la peintre Frida Kahlo — typographie expressive, couleurs vibrantes, formes organiques caractéristiques de son univers artistique.",
+    "lien": null,
+    "download": null
+  },
+    {
+    "titre": "Affiche BUT MMI",
+    "tag": "design",
+    "img": "Images/But MMI.png",
+    "alt": "Affiche promotionnelle BUT MMI",
+    "categorie": "Design · Canva",
+    "desc": "Affiche promotionnelle pour le BUT MMI de l'Université des Antilles. Mise en avant de la formation et de ses débouchés.",
     "lien": null,
     "download": null
   },
@@ -62,73 +81,12 @@
     "download": null
   },
   {
-    "titre": "Affiche Artificia",
-    "tag": "design",
-    "img": "Images/Artificia.png",
-    "alt": "Affiche Artificia — Journée de la Science",
-    "categorie": "Design · Canva",
-    "desc": "Affiche promotionnelle pour l'atelier Artificia présenté lors de la Journée de la Science au BUT MMI de l'Université des Antilles.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Logo Frida",
-    "tag": "design",
-    "img": "Images/FRIDA couleur 2.png",
-    "alt": "Logo Frida Kahlo coloré",
-    "categorie": "Design · Canva",
-    "desc": "Identité visuelle inspirée de la peintre Frida Kahlo — typographie expressive, couleurs vibrantes, formes organiques caractéristiques de son univers artistique.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "L'Oasis des Héros",
-    "tag": "design",
-    "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
-    "img": "Images/Affiche.png",
-    "alt": "Affiche L'Oasis des Héros",
-    "categorie": "Design · Canva",
-    "desc": "Affiche événementielle pour la journée portes ouvertes du BUT MMI. Concept superhéros, ambiance colorée et dynamique.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Mojito Fraise",
-    "tag": "design",
-    "img": "Images/Mojito fraise.png",
-    "alt": "Affiche publicitaire Mojito Fraise",
-    "categorie": "Design · Canva",
-    "desc": "Affiche publicitaire pour un cocktail Mojito Fraise — composition estivale, typographie fraîche, palette rouge et verte.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Affiche BUT MMI",
-    "tag": "design",
-    "img": "Images/But MMI.png",
-    "alt": "Affiche promotionnelle BUT MMI",
-    "categorie": "Design · Canva",
-    "desc": "Affiche promotionnelle pour le BUT MMI de l'Université des Antilles. Mise en avant de la formation et de ses débouchés.",
-    "lien": null,
-    "download": null
-  },
-  {
     "titre": "Ciao Kombucha",
     "tag": "design",
     "img": "Images/Ciao.png",
     "alt": "Affiche Ciao Kombucha Gingembre Hibiscus",
     "categorie": "Design · Canva",
     "desc": "Affiche publicitaire pour une boisson Kombucha Gingembre Hibiscus. Design frais et naturel, palette colorée inspirée des ingrédients.",
-    "lien": null,
-    "download": null
-  },
-  {
-    "titre": "Merry Christmas",
-    "tag": "design",
-    "img": "Images/Merry chrismas.png",
-    "alt": "Carte de vœux Merry Christmas",
-    "categorie": "Design · Canva",
-    "desc": "Carte de vœux festive pour Noël — sapin, père Noël, cadeaux et typographie calligraphique dorée sur fond vert profond.",
     "lien": null,
     "download": null
   },
@@ -153,13 +111,13 @@
     "lien": null,
     "download": "https://drive.google.com/file/d/1V4iV2OPR7JgvjdQmH6ZXvf6e7D4EO8FH/view?usp=drive_link"
   },
-  {
-    "titre": "Affiche Avatar",
+   {
+    "titre": "Merry Christmas",
     "tag": "design",
-    "img": "Images/avatar.jpg",
-    "alt": "Affiche minimaliste Avatar — style Saul Bass",
-    "categorie": "Design · Affiche · Photoshop",
-    "desc": "Affiche minimaliste pour le film Avatar de James Cameron, réalisée dans le cadre d'un exercice inspiré du style de Saul Bass. Composition épurée autour de l'arbre sacré Eywa, palette cyan et bleu électrique.",
+    "img": "Images/Merry chrismas.png",
+    "alt": "Carte de vœux Merry Christmas",
+    "categorie": "Design · Canva",
+    "desc": "Carte de vœux festive pour Noël — sapin, père Noël, cadeaux et typographie calligraphique dorée sur fond vert profond.",
     "lien": null,
     "download": null
   },
@@ -173,6 +131,17 @@
     "lien": null,
     "download": null
   },
+    {
+    "titre": "Terre de Blues",
+    "tag": "branding",
+    "imgs": ["Images/2.jpg", "Images/1.jpg"],
+    "img": "Images/2.jpg",
+    "alt": "Affiche festival Terre de Blues — Marie-Galante",
+    "categorie": "Direction artistique · Festival · Canva",
+    "desc": "Conception des visuels pour la 23ème édition du Festival Terre de Blues de Marie-Galante, réalisée en équipe. Affiches artistes (The Wailers), supports de communication et identité événementielle aux couleurs soleil et terres créoles.",
+    "lien": null,
+    "download": null
+  },
   {
     "titre": "SUNRÉA",
     "tag": "design",
@@ -182,14 +151,15 @@
     "desc": "Affiche pour un événement caribéen fictif — soirée Gwo Ka, contes, DJ set afro-caribéen et food à la Plage de Leroux, Deshaies. Esthétique tropicale et festive, palette coucher de soleil.",
     "lien": null,
     "download": null
-  },
-   {
-    "titre": "BLACKPINK",
+  },  
+  {
+    "titre": "L'Oasis des Héros",
     "tag": "design",
-    "img": "Images/Black_Pink.png",
-    "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
-    "categorie": "Design · Visuel fan-made · Canva",
-    "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
+    "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
+    "img": "Images/Affiche.png",
+    "alt": "Affiche L'Oasis des Héros",
+    "categorie": "Design · Canva",
+    "desc": "Affiche événementielle pour la journée portes ouvertes du BUT MMI. Concept superhéros, ambiance colorée et dynamique.",
     "lien": null,
     "download": null
   },
