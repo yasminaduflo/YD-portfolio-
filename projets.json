@@ -40,6 +40,16 @@
     "lien": null,
     "download": null
   },
+   {
+    "titre": "Mojito Fraise",
+    "tag": "design",
+    "img": "Images/Mojito fraise.png",
+    "alt": "Affiche publicitaire Mojito Fraise",
+    "categorie": "Design · Canva",
+    "desc": "Affiche publicitaire pour un cocktail Mojito Fraise — composition estivale, typographie fraîche, palette rouge et verte.",
+    "lien": null,
+    "download": null
+  },
   {
     "titre": "LIPS",
     "tag": "design",
@@ -57,16 +67,6 @@
     "alt": "Logo Frida Kahlo coloré",
     "categorie": "Design · Canva",
     "desc": "Identité visuelle inspirée de la peintre Frida Kahlo — typographie expressive, couleurs vibrantes, formes organiques caractéristiques de son univers artistique.",
-    "lien": null,
-    "download": null
-  },
-    {
-    "titre": "Affiche BUT MMI",
-    "tag": "design",
-    "img": "Images/But MMI.png",
-    "alt": "Affiche promotionnelle BUT MMI",
-    "categorie": "Design · Canva",
-    "desc": "Affiche promotionnelle pour le BUT MMI de l'Université des Antilles. Mise en avant de la formation et de ses débouchés.",
     "lien": null,
     "download": null
   },
