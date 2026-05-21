@@ -1,6 +1,6 @@
 [
   {
-    "titre": "MARËIS",
+    "titre": "Marëis",
     "tag": "web",
     "large": true,
     "img": "Images/Mareis.jpeg",
@@ -21,7 +21,7 @@
     "download": null
   },
   {
-    "titre": "BLACKPINK",
+    "titre": "Blackpink",
     "tag": "design",
     "img": "Images/Black_Pink.png",
     "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
@@ -31,10 +31,10 @@
     "download": null
   },
    {
-    "titre": "Yasmina.D — Logo",
+    "titre": "Yasmina — Logo",
     "tag": "design",
     "img": "Images/logo_moi.png",
-    "alt": "Logo personnel Yasmina.D — typographie entrelacée",
+    "alt": "Logo personnel Yasmina — typographie entrelacée",
     "categorie": "Design · Personal branding",
     "desc": "Création de mon logo personnel. Logotype typographique avec lettres entrelacées en dégradé rose-doré sur fond noir — esthétique éditoriale et luxueuse.",
     "lien": null,
@@ -51,7 +51,7 @@
     "download": null
   },
   {
-    "titre": "LIPS",
+    "titre": "Lips",
     "tag": "design",
     "img": "Images/Charte graphique  page 1.png",
     "alt": "Charte graphique — couverture",
@@ -71,7 +71,7 @@
     "download": null
   },
   {
-    "titre": "OANA",
+    "titre": "Oana",
     "tag": "branding",
     "img": "Images/OANA.png",
     "alt": "Logo et packaging OANA — savons artisanaux",
@@ -153,7 +153,7 @@
     "download": null
   },
   {
-    "titre": "SUNRÉA",
+    "titre": "Sunréa",
     "tag": "design",
     "img": "Images/affiche_event_fictif.png",
     "alt": "Affiche événement fictif SUNRÉA — Plage de Leroux, Deshaies",
@@ -163,7 +163,7 @@
     "download": null
   },  
   {
-    "titre": "L'Oasis des Héros",
+    "titre": "L'oasis des héros",
     "tag": "design",
     "imgs": ["Images/Affiche.png", "Images/oasis des héros 2.png"],
     "img": "Images/Affiche.png",
