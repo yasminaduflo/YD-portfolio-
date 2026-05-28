@@ -78,14 +78,45 @@ function creerModal() {
         border: none; width: 36px; height: 36px;
         font-size: 1.1rem; display: flex; align-items: center;
         justify-content: center; z-index: 10;
-        transition: background 0.2s;
+        transition: background 0.2s; cursor: pointer;
       ">✕</button>
 
-      <img id="modal-img" src="" alt="" style="
-        width: 100%; max-height: 500px;
-        object-fit: contain; display: block;
-        background: #1a1208;
-      ">
+      <div id="modal-img-wrap" style="position: relative; overflow: hidden; background: #1a1208;">
+        <img id="modal-img" src="" alt="" style="
+          width: 100%; max-height: 500px;
+          object-fit: contain; display: block;
+          transform-origin: center center;
+          transform: scale(1);
+          transition: transform 0.25s ease;
+          cursor: zoom-in;
+        ">
+        <!-- Barre de zoom (images uniquement) -->
+        <div id="zoom-bar" style="
+          position: absolute; bottom: 0.75rem; right: 0.75rem;
+          display: flex; gap: 0.4rem; align-items: center;
+          background: rgba(26,18,8,0.7); padding: 0.4rem 0.6rem;
+          backdrop-filter: blur(4px);
+        ">
+          <button id="zoom-in" aria-label="Zoomer" title="Zoomer" style="
+            background: none; border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; width: 30px; height: 30px; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.2s;
+          ">+</button>
+          <button id="zoom-out" aria-label="Dézoomer" title="Dézoomer" style="
+            background: none; border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; width: 30px; height: 30px; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.2s;
+          ">−</button>
+          <button id="zoom-reset" aria-label="Réinitialiser le zoom" title="Reset" style="
+            background: none; border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; width: 30px; height: 30px; font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.2s;
+          ">↺</button>
+        </div>
+      </div>
 
       <div style="padding: 2rem;">
         <p id="modal-categorie" style="
@@ -116,24 +147,70 @@ function creerModal() {
   document.getElementById('modal-fermer').addEventListener('click', fermerModal);
   document.getElementById('modal-fermer').addEventListener('mouseenter', () => cursor?.classList.add('big'));
   document.getElementById('modal-fermer').addEventListener('mouseleave', () => cursor?.classList.remove('big'));
+
+  // Zoom
+  let zoomLevel = 1;
+  const zoomStep = 0.3;
+  const zoomMin = 1;
+  const zoomMax = 3;
+
+  function appliquerZoom() {
+    const img = document.getElementById('modal-img');
+    if (!img) return;
+    img.style.transform = `scale(${zoomLevel})`;
+    img.style.cursor = zoomLevel > 1 ? 'zoom-out' : 'zoom-in';
+    // Overflow scroll si zoomé
+    const wrap = document.getElementById('modal-img-wrap');
+    wrap.style.overflowX = zoomLevel > 1 ? 'auto' : 'hidden';
+  }
+
+  document.getElementById('zoom-in').addEventListener('click', () => {
+    zoomLevel = Math.min(zoomMax, +(zoomLevel + zoomStep).toFixed(1));
+    appliquerZoom();
+  });
+  document.getElementById('zoom-out').addEventListener('click', () => {
+    zoomLevel = Math.max(zoomMin, +(zoomLevel - zoomStep).toFixed(1));
+    appliquerZoom();
+  });
+  document.getElementById('zoom-reset').addEventListener('click', () => {
+    zoomLevel = 1;
+    appliquerZoom();
+  });
+
+  // Clic sur l'image = toggle zoom
+  document.getElementById('modal-img').addEventListener('click', () => {
+    if (zoomLevel === 1) {
+      zoomLevel = 2;
+    } else {
+      zoomLevel = 1;
+    }
+    appliquerZoom();
+  });
+
+  // Reset zoom à chaque ouverture
+  modalEl._resetZoom = () => { zoomLevel = 1; appliquerZoom(); };
 }
 
 function ouvrirModal(projet) {
   if (!modalEl) creerModal();
+
+  // Reset zoom
+  modalEl._resetZoom?.();
 
   const imgs = projet.imgs || [projet.img];
   let indexActuel = 0;
 
   const modalImgEl = document.getElementById('modal-img');
   const contenu = document.getElementById('modal-contenu');
+  const zoomBar = document.getElementById('zoom-bar');
 
   // Nettoyer les éléments dynamiques précédents
   contenu.querySelectorAll('.modal-video, .slider-btn').forEach(el => el.remove());
 
   // Gestion vidéo ou image
   if (projet.video) {
-    // Cacher l'image, afficher un iframe Drive
     modalImgEl.style.display = 'none';
+    if (zoomBar) zoomBar.style.display = 'none';
     const iframe = document.createElement('iframe');
     iframe.className = 'modal-video';
     iframe.src = projet.video;
@@ -144,14 +221,14 @@ function ouvrirModal(projet) {
       border: none; display: block;
       background: #000;
     `;
-    contenu.insertBefore(iframe, contenu.querySelector('div'));
+    const wrap = document.getElementById('modal-img-wrap');
+    wrap.insertBefore(iframe, wrap.querySelector('#zoom-bar'));
   } else {
-    // Image normale
     modalImgEl.style.display = 'block';
+    if (zoomBar) zoomBar.style.display = 'flex';
     modalImgEl.src = imgs[0];
     modalImgEl.alt = projet.alt || projet.titre;
 
-    // Slider multi-images
     if (imgs.length > 1) {
       const btnPrev = document.createElement('button');
       btnPrev.className = 'slider-btn slider-prev';
@@ -164,21 +241,23 @@ function ouvrirModal(projet) {
         border: none; width: 40px; height: 40px;
         font-size: 1.2rem; display: flex;
         align-items: center; justify-content: center;
-        z-index: 10; transition: background 0.2s;
+        z-index: 10; transition: background 0.2s; cursor: pointer;
       `;
       const btnNext = document.createElement('button');
       btnNext.className = 'slider-btn slider-next';
       btnNext.setAttribute('aria-label', 'Image suivante');
       btnNext.textContent = '→';
-      btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 1rem; left: auto');
+      btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 4rem; left: auto');
 
       btnPrev.addEventListener('click', () => {
         indexActuel = (indexActuel - 1 + imgs.length) % imgs.length;
         modalImgEl.src = imgs[indexActuel];
+        modalEl._resetZoom?.();
       });
       btnNext.addEventListener('click', () => {
         indexActuel = (indexActuel + 1) % imgs.length;
         modalImgEl.src = imgs[indexActuel];
+        modalEl._resetZoom?.();
       });
 
       contenu.appendChild(btnPrev);
@@ -213,12 +292,13 @@ function ouvrirModal(projet) {
 
 function fermerModal() {
   if (!modalEl) return;
-  // Stopper la vidéo en retirant l'iframe
   const iframe = modalEl.querySelector('.modal-video');
   if (iframe) iframe.remove();
-  // Réafficher l'image
   const modalImgEl = document.getElementById('modal-img');
   if (modalImgEl) modalImgEl.style.display = 'block';
+  const zoomBar = document.getElementById('zoom-bar');
+  if (zoomBar) zoomBar.style.display = 'flex';
+  modalEl._resetZoom?.();
 
   modalEl.style.opacity = '0';
   modalEl.style.pointerEvents = 'none';
@@ -266,7 +346,6 @@ function afficherProjets(liste) {
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-label', `Voir le projet : ${p.titre}`);
 
-    // Icône play pour les vidéos
     const playIcon = p.video ? `<div class="play-icon" aria-hidden="true">▶</div>` : '';
 
     card.innerHTML = `
