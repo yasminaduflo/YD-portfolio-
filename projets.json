@@ -183,5 +183,29 @@
     "desc": "Site d'actualités fictif réalisé dans le cadre d'un exercice BUT MMI. Plusieurs rubriques, navigation multi-pages, design éditorial responsive déployé sur GitHub Pages.",
     "lien": "https://yasminaduflo97125-crypto.github.io/nexovia/Nexovia_index.html",
     "download": null
+  },
+  {
+    "titre": "Montage IMPT",
+    "tag": "video",
+    "large": true,
+    "img": "Images/montage_impt_thumb.jpg",
+    "alt": "Montage vidéo IMPT — interviews sur le racisme",
+    "categorie": "Vidéo · Montage · Reportage",
+    "desc": "Reportage vidéo réalisé en classe dans le cadre du BUT MMI. Interviews filmées au sein de l'université autour de la thématique du racisme — cadrage, tournage et montage assurés par l'équipe étudiante.",
+    "lien": null,
+    "download": null,
+    "video": "https://drive.google.com/file/d/19jmv8R4wJ6D55e2AU4GODwU9Yvh03XL3/preview"
+  },
+  {
+    "titre": "Scream",
+    "tag": "video",
+    "large": true,
+    "img": "Images/scream_thumb.jpg",
+    "alt": "Court-métrage Scream — film d'horreur étudiant",
+    "categorie": "Vidéo · Court-métrage · Fiction",
+    "desc": "Court-métrage d'horreur/thriller réalisé en classe dans le cadre du BUT MMI. Production collective de A à Z — scénario, tournage, jeu d'acteur et montage assurés par la promotion entière.",
+    "lien": null,
+    "download": null,
+    "video": "https://drive.google.com/file/d/1rBhXrE7YD7P3SIWS_GPpwKn642CUEasy/preview"
   }
 ]
