@@ -185,6 +185,18 @@
     "download": null
   },
   {
+    "titre": "ISLOVA",
+    "tag": "branding",
+    "large": true,
+    "imgs": ["Images/affiche_islova.png", "Images/story_insta1.png", "Images/story_insta2.png", "Images/post_insta1.jpg", "Images/post_insta2.jpg"],
+    "img": "Images/affiche_islova.png",
+    "alt": "ISLOVA — identité visuelle complète, charms caribéens",
+    "categorie": "Branding · Direction artistique · Canva",
+    "desc": "Conception de l'ensemble des visuels pour ISLOVA, une marque de charms en acier inoxydable doré inspirés de la faune, la flore et la culture guadeloupéenne. Posts Instagram, stories et affiche de lancement — direction artistique complète.",
+    "lien": null,
+    "download": null
+  },
+  {
     "titre": "Reportage sur la méritocratie et le racisme  ",
     "tag": "video",
     "large": true,
