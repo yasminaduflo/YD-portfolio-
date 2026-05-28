@@ -2,6 +2,30 @@
 // PORTFOLIO YASMINA DUFLO — script.js
 // ================================
 
+// Thème sombre/clair
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') document.body.classList.add('dark-mode');
+
+function toggleTheme() {
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const btn = document.getElementById('btn-theme');
+  if (btn) {
+    btn.textContent = isDark ? '☀' : '☾';
+    btn.setAttribute('aria-label', isDark ? 'Activer le thème clair' : 'Activer le thème sombre');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-theme');
+  if (btn) {
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? '☀' : '☾';
+    btn.addEventListener('click', toggleTheme);
+    btn.setAttribute('aria-label', isDark ? 'Activer le thème clair' : 'Activer le thème sombre');
+  }
+});
+
 // Année dans le footer
 const anneeEl = document.getElementById('annee');
 if (anneeEl) anneeEl.textContent = new Date().getFullYear();
