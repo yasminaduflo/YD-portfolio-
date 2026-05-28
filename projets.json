@@ -25,7 +25,7 @@
     "tag": "design",
     "img": "Images/Black_Pink.png",
     "alt": "Visuel BLACKPINK — Lovesick Girls 600 millions de vues",
-    "categorie": "Design · Visuel fan-made · Canva",
+    "categorie": "Design · Visuel fan-made · Photoshop",
     "desc": "Visuel commémoratif fan-made pour les 600 millions de vues du clip Lovesick Girls de BLACKPINK sur YouTube. Esthétique K-pop noir et rose, typographie impactante.",
     "lien": null,
     "download": null
@@ -187,6 +187,7 @@
   {
     "titre": "Reportage sur la méritocratie et le racisme  ",
     "tag": "video",
+    "large": true,
     "img": "Images/Illustration_logo.jpg",
     "alt": "Montage vidéo IMPT — interviews sur le racisme",
     "categorie": "Vidéo · Montage · Reportage",
@@ -198,6 +199,7 @@
   {
     "titre": "Scream court-métrage",
     "tag": "video",
+    "large": true,
     "img": "Images/Scream_image.jpg",
     "alt": "Court-métrage Scream — film d'horreur étudiant",
     "categorie": "Vidéo · Court-métrage · Fiction",
