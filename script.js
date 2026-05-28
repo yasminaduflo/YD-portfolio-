@@ -125,47 +125,65 @@ function ouvrirModal(projet) {
   let indexActuel = 0;
 
   const modalImgEl = document.getElementById('modal-img');
-  modalImgEl.src = imgs[0];
-  modalImgEl.alt = projet.alt || projet.titre;
-
-  // Slider
   const contenu = document.getElementById('modal-contenu');
 
-  // Retire les anciennes flèches si elles existent
-  contenu.querySelectorAll('.slider-btn').forEach(b => b.remove());
+  // Nettoyer les éléments dynamiques précédents
+  contenu.querySelectorAll('.modal-video, .slider-btn').forEach(el => el.remove());
 
-  if (imgs.length > 1) {
-    const btnPrev = document.createElement('button');
-    btnPrev.className = 'slider-btn slider-prev';
-    btnPrev.setAttribute('aria-label', 'Image précédente');
-    btnPrev.textContent = '←';
-    btnPrev.style.cssText = `
-      position: absolute; top: 50%; left: 1rem;
-      transform: translateY(-50%);
-      background: var(--ink); color: var(--cream);
-      border: none; width: 40px; height: 40px;
-      font-size: 1.2rem; display: flex;
-      align-items: center; justify-content: center;
-      z-index: 10; transition: background 0.2s;
+  // Gestion vidéo ou image
+  if (projet.video) {
+    // Cacher l'image, afficher un iframe Drive
+    modalImgEl.style.display = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.className = 'modal-video';
+    iframe.src = projet.video;
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.style.cssText = `
+      width: 100%; height: 450px;
+      border: none; display: block;
+      background: #000;
     `;
+    contenu.insertBefore(iframe, contenu.querySelector('div'));
+  } else {
+    // Image normale
+    modalImgEl.style.display = 'block';
+    modalImgEl.src = imgs[0];
+    modalImgEl.alt = projet.alt || projet.titre;
 
-    const btnNext = document.createElement('button');
-    btnNext.className = 'slider-btn slider-next';
-    btnNext.setAttribute('aria-label', 'Image suivante');
-    btnNext.textContent = '→';
-    btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 1rem; left: auto');
+    // Slider multi-images
+    if (imgs.length > 1) {
+      const btnPrev = document.createElement('button');
+      btnPrev.className = 'slider-btn slider-prev';
+      btnPrev.setAttribute('aria-label', 'Image précédente');
+      btnPrev.textContent = '←';
+      btnPrev.style.cssText = `
+        position: absolute; top: 50%; left: 1rem;
+        transform: translateY(-50%);
+        background: var(--ink); color: var(--cream);
+        border: none; width: 40px; height: 40px;
+        font-size: 1.2rem; display: flex;
+        align-items: center; justify-content: center;
+        z-index: 10; transition: background 0.2s;
+      `;
+      const btnNext = document.createElement('button');
+      btnNext.className = 'slider-btn slider-next';
+      btnNext.setAttribute('aria-label', 'Image suivante');
+      btnNext.textContent = '→';
+      btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 1rem; left: auto');
 
-    btnPrev.addEventListener('click', () => {
-      indexActuel = (indexActuel - 1 + imgs.length) % imgs.length;
-      modalImgEl.src = imgs[indexActuel];
-    });
-    btnNext.addEventListener('click', () => {
-      indexActuel = (indexActuel + 1) % imgs.length;
-      modalImgEl.src = imgs[indexActuel];
-    });
+      btnPrev.addEventListener('click', () => {
+        indexActuel = (indexActuel - 1 + imgs.length) % imgs.length;
+        modalImgEl.src = imgs[indexActuel];
+      });
+      btnNext.addEventListener('click', () => {
+        indexActuel = (indexActuel + 1) % imgs.length;
+        modalImgEl.src = imgs[indexActuel];
+      });
 
-    contenu.appendChild(btnPrev);
-    contenu.appendChild(btnNext);
+      contenu.appendChild(btnPrev);
+      contenu.appendChild(btnNext);
+    }
   }
 
   document.getElementById('modal-titre').textContent = projet.titre;
@@ -195,6 +213,13 @@ function ouvrirModal(projet) {
 
 function fermerModal() {
   if (!modalEl) return;
+  // Stopper la vidéo en retirant l'iframe
+  const iframe = modalEl.querySelector('.modal-video');
+  if (iframe) iframe.remove();
+  // Réafficher l'image
+  const modalImgEl = document.getElementById('modal-img');
+  if (modalImgEl) modalImgEl.style.display = 'block';
+
   modalEl.style.opacity = '0';
   modalEl.style.pointerEvents = 'none';
   document.body.style.overflow = '';
@@ -241,8 +266,12 @@ function afficherProjets(liste) {
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-label', `Voir le projet : ${p.titre}`);
 
+    // Icône play pour les vidéos
+    const playIcon = p.video ? `<div class="play-icon" aria-hidden="true">▶</div>` : '';
+
     card.innerHTML = `
       <img src="${p.img}" alt="${p.alt || p.titre}">
+      ${playIcon}
       <div class="projet-overlay" aria-hidden="true">
         <h3 class="projet-title">${p.titre}</h3>
       </div>
@@ -262,7 +291,6 @@ function afficherProjets(liste) {
 
     grille.appendChild(card);
 
-    // Curseur sur les cartes
     card.addEventListener('mouseenter', () => cursor?.classList.add('big'));
     card.addEventListener('mouseleave', () => cursor?.classList.remove('big'));
 
