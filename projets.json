@@ -187,8 +187,7 @@
   {
     "titre": "ISLOVA",
     "tag": "branding",
-    "large": true,
-    "imgs": ["Images/affiche_islova.png", "Images/story_insta1.png", "Images/story_insta2.png", "Images/post_insta1.jpg", "Images/post_insta2.jpg"],
+    "imgs": ["Images/affiche_islova.png", "Images/story_insta1.jpg", "Images/story_insta2.jpg", "Images/post_insta1.png", "Images/post_insta2.png"],
     "img": "Images/affiche_islova.png",
     "alt": "ISLOVA — identité visuelle complète, charms caribéens",
     "categorie": "Branding · Direction artistique · Canva",
