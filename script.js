@@ -81,21 +81,26 @@ function creerModal() {
         transition: background 0.2s; cursor: pointer;
       ">✕</button>
 
-      <div id="modal-img-wrap" style="position: relative; overflow: hidden; background: #1a1208;">
+      <div id="modal-img-wrap" style="
+        position: relative; overflow: hidden;
+        background: #1a1208; height: 500px;
+        display: flex; align-items: center; justify-content: center;
+      ">
         <img id="modal-img" src="" alt="" style="
-          width: 100%; max-height: 500px;
+          max-width: 100%; max-height: 100%;
           object-fit: contain; display: block;
-          transform-origin: center center;
-          transform: scale(1);
-          transition: transform 0.25s ease;
+          transform-origin: 0 0;
+          transform: scale(1) translate(0px, 0px);
+          transition: transform 0.2s ease;
           cursor: zoom-in;
+          user-select: none;
+          -webkit-user-drag: none;
         ">
-        <!-- Barre de zoom (images uniquement) -->
         <div id="zoom-bar" style="
           position: absolute; bottom: 0.75rem; right: 0.75rem;
           display: flex; gap: 0.4rem; align-items: center;
           background: rgba(26,18,8,0.7); padding: 0.4rem 0.6rem;
-          backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px); z-index: 5;
         ">
           <button id="zoom-in" aria-label="Zoomer" title="Zoomer" style="
             background: none; border: 1px solid rgba(255,255,255,0.3);
@@ -148,53 +153,133 @@ function creerModal() {
   document.getElementById('modal-fermer').addEventListener('mouseenter', () => cursor?.classList.add('big'));
   document.getElementById('modal-fermer').addEventListener('mouseleave', () => cursor?.classList.remove('big'));
 
-  // Zoom
+  // ---- ZOOM + PAN ----
   let zoomLevel = 1;
-  const zoomStep = 0.3;
+  let panX = 0, panY = 0;
+  const zoomStep = 0.4;
   const zoomMin = 1;
-  const zoomMax = 3;
+  const zoomMax = 4;
 
-  function appliquerZoom() {
+  // État drag
+  let isDragging = false;
+  let dragStartX = 0, dragStartY = 0;
+  let panStartX = 0, panStartY = 0;
+
+  function appliquerTransform(animate = true) {
     const img = document.getElementById('modal-img');
     if (!img) return;
-    img.style.transform = `scale(${zoomLevel})`;
-    img.style.cursor = zoomLevel > 1 ? 'zoom-out' : 'zoom-in';
-    // Overflow scroll si zoomé
+    img.style.transition = animate ? 'transform 0.2s ease' : 'none';
+    img.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
+    img.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+  }
+
+  function clampPan() {
     const wrap = document.getElementById('modal-img-wrap');
-    wrap.style.overflowX = zoomLevel > 1 ? 'auto' : 'hidden';
+    const img = document.getElementById('modal-img');
+    if (!wrap || !img) return;
+    const wrapW = wrap.clientWidth;
+    const wrapH = wrap.clientHeight;
+    const imgW = img.clientWidth;
+    const imgH = img.clientHeight;
+    const maxX = Math.max(0, (imgW * zoomLevel - wrapW) / (2 * zoomLevel));
+    const maxY = Math.max(0, (imgH * zoomLevel - wrapH) / (2 * zoomLevel));
+    panX = Math.min(maxX, Math.max(-maxX, panX));
+    panY = Math.min(maxY, Math.max(-maxY, panY));
   }
 
   document.getElementById('zoom-in').addEventListener('click', () => {
     zoomLevel = Math.min(zoomMax, +(zoomLevel + zoomStep).toFixed(1));
-    appliquerZoom();
-  });
-  document.getElementById('zoom-out').addEventListener('click', () => {
-    zoomLevel = Math.max(zoomMin, +(zoomLevel - zoomStep).toFixed(1));
-    appliquerZoom();
-  });
-  document.getElementById('zoom-reset').addEventListener('click', () => {
-    zoomLevel = 1;
-    appliquerZoom();
+    clampPan();
+    appliquerTransform();
   });
 
-  // Clic sur l'image = toggle zoom
-  document.getElementById('modal-img').addEventListener('click', () => {
+  document.getElementById('zoom-out').addEventListener('click', () => {
+    zoomLevel = Math.max(zoomMin, +(zoomLevel - zoomStep).toFixed(1));
+    if (zoomLevel === zoomMin) { panX = 0; panY = 0; }
+    clampPan();
+    appliquerTransform();
+  });
+
+  document.getElementById('zoom-reset').addEventListener('click', () => {
+    zoomLevel = 1; panX = 0; panY = 0;
+    appliquerTransform();
+  });
+
+  // Clic image = toggle zoom x2
+  document.getElementById('modal-img').addEventListener('click', e => {
+    if (isDragging) return;
     if (zoomLevel === 1) {
       zoomLevel = 2;
     } else {
-      zoomLevel = 1;
+      zoomLevel = 1; panX = 0; panY = 0;
     }
-    appliquerZoom();
+    clampPan();
+    appliquerTransform();
   });
 
+  // Drag pour se déplacer
+  const imgEl = document.getElementById('modal-img');
+
+  imgEl.addEventListener('mousedown', e => {
+    if (zoomLevel <= 1) return;
+    isDragging = false;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    panStartX = panX;
+    panStartY = panY;
+    imgEl.style.cursor = 'grabbing';
+
+    const onMouseMove = e => {
+      const dx = (e.clientX - dragStartX) / zoomLevel;
+      const dy = (e.clientY - dragStartY) / zoomLevel;
+      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) isDragging = true;
+      panX = panStartX + dx;
+      panY = panStartY + dy;
+      clampPan();
+      appliquerTransform(false);
+    };
+
+    const onMouseUp = () => {
+      imgEl.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+      setTimeout(() => { isDragging = false; }, 50);
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  // Touch drag (mobile)
+  imgEl.addEventListener('touchstart', e => {
+    if (zoomLevel <= 1 || e.touches.length !== 1) return;
+    dragStartX = e.touches[0].clientX;
+    dragStartY = e.touches[0].clientY;
+    panStartX = panX;
+    panStartY = panY;
+  }, { passive: true });
+
+  imgEl.addEventListener('touchmove', e => {
+    if (zoomLevel <= 1 || e.touches.length !== 1) return;
+    e.preventDefault();
+    const dx = (e.touches[0].clientX - dragStartX) / zoomLevel;
+    const dy = (e.touches[0].clientY - dragStartY) / zoomLevel;
+    panX = panStartX + dx;
+    panY = panStartY + dy;
+    clampPan();
+    appliquerTransform(false);
+  }, { passive: false });
+
   // Reset zoom à chaque ouverture
-  modalEl._resetZoom = () => { zoomLevel = 1; appliquerZoom(); };
+  modalEl._resetZoom = () => {
+    zoomLevel = 1; panX = 0; panY = 0;
+    appliquerTransform();
+  };
 }
 
 function ouvrirModal(projet) {
   if (!modalEl) creerModal();
 
-  // Reset zoom
   modalEl._resetZoom?.();
 
   const imgs = projet.imgs || [projet.img];
@@ -203,11 +288,10 @@ function ouvrirModal(projet) {
   const modalImgEl = document.getElementById('modal-img');
   const contenu = document.getElementById('modal-contenu');
   const zoomBar = document.getElementById('zoom-bar');
+  const wrap = document.getElementById('modal-img-wrap');
 
-  // Nettoyer les éléments dynamiques précédents
   contenu.querySelectorAll('.modal-video, .slider-btn').forEach(el => el.remove());
 
-  // Gestion vidéo ou image
   if (projet.video) {
     modalImgEl.style.display = 'none';
     if (zoomBar) zoomBar.style.display = 'none';
@@ -217,11 +301,10 @@ function ouvrirModal(projet) {
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
     iframe.style.cssText = `
-      width: 100%; height: 450px;
+      width: 100%; height: 100%;
       border: none; display: block;
-      background: #000;
+      background: #000; position: absolute; inset: 0;
     `;
-    const wrap = document.getElementById('modal-img-wrap');
     wrap.insertBefore(iframe, wrap.querySelector('#zoom-bar'));
   } else {
     modalImgEl.style.display = 'block';
@@ -247,7 +330,7 @@ function ouvrirModal(projet) {
       btnNext.className = 'slider-btn slider-next';
       btnNext.setAttribute('aria-label', 'Image suivante');
       btnNext.textContent = '→';
-      btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 4rem; left: auto');
+      btnNext.style.cssText = btnPrev.style.cssText.replace('left: 1rem', 'right: 4.5rem; left: auto');
 
       btnPrev.addEventListener('click', () => {
         indexActuel = (indexActuel - 1 + imgs.length) % imgs.length;
@@ -299,7 +382,6 @@ function fermerModal() {
   const zoomBar = document.getElementById('zoom-bar');
   if (zoomBar) zoomBar.style.display = 'flex';
   modalEl._resetZoom?.();
-
   modalEl.style.opacity = '0';
   modalEl.style.pointerEvents = 'none';
   document.body.style.overflow = '';
@@ -312,7 +394,7 @@ function btnStyle(outline) {
 }
 
 // ================================
-// CHARGEMENT JSON (page projets)
+// CHARGEMENT JSON
 // ================================
 
 let tousLesProjets = [];
@@ -320,7 +402,6 @@ let tousLesProjets = [];
 async function chargerProjets() {
   const grille = document.getElementById('grille-projets');
   if (!grille) return;
-
   try {
     const res = await fetch('projets.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -349,7 +430,7 @@ function afficherProjets(liste) {
     const playIcon = p.video ? `<div class="play-icon" aria-hidden="true">▶</div>` : '';
 
     card.innerHTML = `
-      <img src="${p.img}" alt="${p.alt || p.titre}">
+      <img src="${p.img}" alt="${p.alt || p.titre}" style="object-fit: cover; width: 100%; height: 100%;">
       ${playIcon}
       <div class="projet-overlay" aria-hidden="true">
         <h3 class="projet-title">${p.titre}</h3>
@@ -369,10 +450,8 @@ function afficherProjets(liste) {
     });
 
     grille.appendChild(card);
-
     card.addEventListener('mouseenter', () => cursor?.classList.add('big'));
     card.addEventListener('mouseleave', () => cursor?.classList.remove('big'));
-
     observer.observe(card);
   });
 }
@@ -388,7 +467,6 @@ document.querySelectorAll('.filtre-btn').forEach(btn => {
     document.querySelectorAll('.filtre-btn').forEach(f => { f.classList.remove('actif'); f.removeAttribute('aria-pressed'); });
     btn.classList.add('actif');
     btn.setAttribute('aria-pressed', 'true');
-
     const cat = btn.dataset.filtre;
     if (tousLesProjets.length > 0) {
       const filtres = cat === 'tous' ? tousLesProjets : tousLesProjets.filter(p => p.tag === cat);
@@ -438,7 +516,6 @@ form?.querySelectorAll('input, textarea').forEach(f => {
   });
 });
 
-// Compteur caractères
 const msgArea = document.getElementById('message');
 const restant = document.getElementById('restant');
 msgArea?.addEventListener('input', () => {
