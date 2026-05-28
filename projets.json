@@ -187,7 +187,6 @@
   {
     "titre": "Reportage sur la méritocratie et le racisme  ",
     "tag": "video",
-    "large": true,
     "img": "Images/Illustration_logo.jpg",
     "alt": "Montage vidéo IMPT — interviews sur le racisme",
     "categorie": "Vidéo · Montage · Reportage",
@@ -199,7 +198,6 @@
   {
     "titre": "Scream court-métrage",
     "tag": "video",
-    "large": true,
     "img": "Images/Scream_image.jpg",
     "alt": "Court-métrage Scream — film d'horreur étudiant",
     "categorie": "Vidéo · Court-métrage · Fiction",
